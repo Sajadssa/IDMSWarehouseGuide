@@ -149,7 +149,15 @@ table.tbl td b{color:var(--hi);}
 .stat-chip{background:var(--bg-1);border:1px solid var(--border);border-radius:14px;padding:14px 16px;}
 .stat-chip .big{color:var(--accent-strong);font-weight:800;font-size:15px;}
 .stat-chip .small{color:var(--lo);font-size:12px;margin-top:4px;line-height:1.6;}
+.chapter-badge  .new{
+max-height: auto;
+width: auto;
+font-size: 12px;
+text-align: center;
+text-wrap: none;
+border: none;
 
+}
 /* stepper component */
 .stepper{margin:10px 0 24px;}
 .step-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
@@ -251,6 +259,7 @@ table.tbl td b{color:var(--hi);}
 <body>
 <div class="shell">
   <div class="topbar">
+      <button class="chapter-badge new" onclick="bt">نسخه جدید</button>
     <div class="crumb"><span class="dot"></span><span id="crumbText">این نرم‌افزار چیست و این راهنما چطور کار می‌کند</span></div>
     <div class="hint">کلیدهای <kbd>←</kbd><kbd>→</kbd> برای ورق زدن فصل‌ها</div>
   </div>
@@ -896,6 +905,14 @@ document.addEventListener('keydown', (e)=>{
 
 buildNav();
 render();
+
+
+const btn = document.querySelector(".chapter-badge.new");
+
+btn.addEventListener("click", () => {
+  window.open("./IDMS_Warehouse_Guide.html", "_blank");
+});
+
 </script>
 </body>
 </html>
